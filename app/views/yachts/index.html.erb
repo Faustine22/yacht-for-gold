@@ -1,0 +1,14 @@
+
+
+<div class="container">
+  <h1 class= "text-center">  Bonjour, choisissez votre Yacht:</h1>
+  <% @yachts.each do |yacht| %>
+    <%= link_to yacht_path(yacht) do %>
+     <div class="evan border p-4 text-center m-3 ">
+       <%=yacht.name %>
+       <%=yacht.size %>
+       <%=yacht.price_per_day %>
+     </div>
+    <% end %>
+  <% end %>
+</div>

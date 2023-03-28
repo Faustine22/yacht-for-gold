@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Tu es dans le Show</h1>
+  <h2>Tu vois actuellement le yacht de :<%= @yacht.name %> </h2>
+  <%= simple_form_for([@yacht, @booking]) do |f| %>
+    <div class="row">
+     
+      <div class="col">
+        <%= f.input :start_date, as: :string,
+                    wrapper_html: { class: "mb-4" },
+                    label_html: { class: "form-label text-secondary fw-bold" },
+                    input_html: { data: { controller: "flatpickr" } } %>
+      </div>
+      <div class="col">
+        <%= f.input :end_date, as: :string,
+                    wrapper_html: { class: "mb-4" },
+                    label_html: { class: "form-label text-secondary fw-bold" },
+                    input_html: { data: { controller: "flatpickr" } } %>
+      </div>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>
